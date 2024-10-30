@@ -65,6 +65,6 @@ fun main() {
 
     val array = intArrayOf(1, 2, 0, 3, 4, 5, 0, 6, 7)
     val count = countElementsBetweenZeros(array)
-    println("Количество элементов между нулями: $count")Сид
+    println("Количество элементов между нулями: $count")
 
 }
