@@ -13,12 +13,21 @@ package highestOrder
  */
 
 fun action(color1: String, color2: String, mixColors: (String, String) -> String): String {
-    print ("Смешение $color1 и $color2 дают")
-    if (color1=="Красный") {
-        if (color2=="Желтый") return "Оранжевый"
-        if (color2=="Синий") return "Фиолетовый"
-    }
     return mixColors(color1,color2)
+}
+
+fun mixColors(color1: String, color2: String): String {
+    when {
+        (color1 == "Красный" && color2 == "Синий") || (color1 == "Синий" && color2 == "Красный") -> {
+            return "Фиолетовый"
+        }
+        (color1 == "Красный" && color2 == "Желтый") || (color1 == "Желтый" && color2 == "Красный") -> {
+            return "Оранжевый"
+        }
+        else -> {
+            return "Неизвестный цвет"
+        }
+    }
 }
 
 fun incrementByOne(num: Int): Int {
@@ -36,12 +45,12 @@ fun processArray(numbers: Array<Int>, operation: (Int) -> Int): Array<Int> {
 
 fun main() {
     println("Задание 1")
-    var result = action("Красный", "Желтый") { c1, c2 -> "$c1 и $c2" }
-    print(" $result \n")
-    result = action("Красный", "Синий") { c1, c2 -> "$c1 и $c2" }
-    print(" $result \n")
-    result = action("Красный", "Зеленый") { c1, c2 -> "$c1 и $c2" }
-    print(" $result \n")
+    var result = action("Красный", "Желтый") { c1, c2 -> "Смешивание $c1 и $c2 дает " + mixColors(c1, c2)}
+    println(result)
+    result = action("Красный", "Синий") { c1, c2 -> "Смешивание $c1 и $c2 дает " + mixColors(c1, c2)}
+    println(result)
+    result = action("Красный", "Зеленый") { c1, c2 -> "Смешивание $c1 и $c2 дает " + mixColors(c1, c2)}
+    println(result)
 
     println("Задание 2")
     val numbers = arrayOf(1, 2, 3, 4, 5, 6, 7)
