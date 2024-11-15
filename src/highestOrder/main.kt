@@ -25,7 +25,7 @@ fun mixColors(color1: String, color2: String): String {
             return "Оранжевый"
         }
         else -> {
-            return "Неизвестный цвет"
+            return "Цвет которого не знаю"
         }
     }
 }
