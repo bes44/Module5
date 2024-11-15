@@ -18,7 +18,7 @@ fun action(color1: String, color2: String, mixColors: (String, String) -> String
         if (color2=="Желтый") return "Оранжевый"
         if (color2=="Синий") return "Фиолетовый"
     }
-    return "Цвет которого не знаю"
+    return mixColors(color1,color2)
 }
 
 fun incrementByOne(num: Int): Int {
